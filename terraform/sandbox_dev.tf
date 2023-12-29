@@ -11,6 +11,7 @@ module "sandbox_dev" {
   workspace_configurations = {
     sandbox_dev_main = {
       trigger_source = null
+      tags           = ["dev", "sandbox", "main"]
     }
   }
 }
