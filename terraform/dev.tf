@@ -1,21 +1,21 @@
-module "sandbox_dev" {
+module "dev" {
   source = "app.terraform.io/fer1035/cross-workspace/tfe"
 
   org_name     = "fer1035"
-  project_name = "sandbox_dev"
+  project_name = "dev"
 
   variable_sets = [
     "NI Sandbox Credentials - Dev Org"
   ]
 
   workspace_configurations = {
-    sandbox_dev_main = {
+    dev_sandbox = {
       trigger_source = null
-      tags           = ["dev", "sandbox", "main"]
+      tags           = ["dev", "sandbox"]
     }
   }
 }
 
-output "sandbox_dev" {
-  value = module.sandbox_dev.environment
+output "dev" {
+  value = module.dev.environment
 }
