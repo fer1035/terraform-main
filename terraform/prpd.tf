@@ -1,21 +1,21 @@
-module "sandbox_prod" {
+module "prod" {
   source = "app.terraform.io/fer1035/cross-workspace/tfe"
 
   org_name     = "fer1035"
-  project_name = "sandbox_prod"
+  project_name = "prod"
 
   variable_sets = [
     "NI Sandbox Credentials - Prod Org"
   ]
 
   workspace_configurations = {
-    sandbox_prod_main = {
+    prod_sandbox = {
       trigger_source = null
-      tags           = ["prod", "sandbox", "main"]
+      tags           = ["prod", "sandbox"]
     }
   }
 }
 
-output "sandbox_prod" {
-  value = module.sandbox_prod.environment
+output "prod" {
+  value = module.prod.environment
 }
