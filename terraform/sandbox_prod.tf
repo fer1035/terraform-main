@@ -11,6 +11,7 @@ module "sandbox_prod" {
   workspace_configurations = {
     sandbox_prod_main = {
       trigger_source = null
+      tags           = ["prod", "sandbox", "main"]
     }
   }
 }
