@@ -9,4 +9,5 @@ output "caller" {
     account_id = data.aws_caller_identity.current.account_id
     caller_arn = data.aws_caller_identity.current.arn
     user_id    = data.aws_caller_identity.current.user_id
+  }
 }
